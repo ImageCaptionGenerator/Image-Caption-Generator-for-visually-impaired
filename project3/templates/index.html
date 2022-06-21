@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Caption Generator for Visually Impaired</title>
+    </head>
+    <body>
+        <h1> IMAGE CAPTION GENERATOR FOR VISUALLY IMPAIRED</h1>
+
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <input type="file" name="userfile" placeholder="Your Image">
+            <br>
+            <input type="submit">
+        </form>
+
+        {% if your_result %}
+            
+            <audio id="musicplayer" autoplay>
+                <source src="{{your_result['audio']}}">
+            </audio>
+        
+            <img src="{{your_result['image']}}">
+            <br>
+            <h1>Generated Caption : <i> {{your_result['caption']}} </i></h1>
+
+		    <audio controls autoplay>
+                <source src="{{your_result['audio']}}">
+			    
+		    </audio>
+
+        {% endif %}
+
+    </body>
+</html>
